@@ -7,51 +7,56 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 // “I love deadlines. I love the whooshing noise they make as they go by.” -Douglas Adams
 
 public class ImageGrid extends Application {
 
-    // TODO Modify example to meet the assignment requirements
+
     public void start(Stage primaryStage) {
         // Create a pane to hold the image views
-        GridPane pane = new GridPane();
-        pane.setAlignment(Pos.CENTER);
-        pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
-        pane.setHgap(5.5);
-        pane.setVgap(5.5);
+        GridPane imagePane = new GridPane();
+        imagePane.setAlignment(Pos.CENTER);
+        imagePane.setPadding(new Insets(50, 50, 50, 50));
+        imagePane.setHgap(5.5);
+        imagePane.setVgap(5.5);
 
-        // Right-click on the image you want and select "copy path". Then paste it in the new Image path below
-        Image image = new Image("Insert image filepath here"); // Load American flag
+        // Load images and place the image nodes in the pane
+        imagePane.add(new ImageView(new Image("Insert image filepath here")), 0, 0); // Load American flag
+        imagePane.add(new ImageView(new Image("Insert image filepath here")), 1, 0); // Load United Kingdom flag
+        imagePane.add(new ImageView(new Image("Insert image filepath here")), 0, 1); // Load France flag
+        imagePane.add(new ImageView(new Image("Insert image filepath here")), 1, 1); // Load China flag
 
-        Image image2 = new Image("Insert image filepath here"); // Load United Kingdom flag
-        Image image3 = new Image("Insert image filepath here"); // Load France flag
-        Image image4 = new Image("Insert image filepath here"); // Load China flag
 
-        // TODO Space and resize the images now that they can be loaded into the gridpane
-        pane.getChildren().add(new ImageView(image));
 
-        ImageView imageView2 = new ImageView(image2);
-        imageView2.setFitHeight(100);
-        imageView2.setFitWidth(100);
-        pane.getChildren().add(imageView2);
 
-        imageView2.setFitHeight(100);
-        imageView2.setFitWidth(100);
-        ImageView imageView3 = new ImageView(image3);
+//        imagePane.getChildren().add(new ImageView(image));
+//
+//        ImageView imageView2 = new ImageView(image)  ;
+//        imageView2.setFitHeight(20);
+//        imageView2.setFitWidth(20);
+//        imagePane.getChildren().add(imageView2);
+//
+//        imageView2.setFitHeight(40);
+//        imageView2.setFitWidth(40);
+//        ImageView imageView3 = new ImageView(image3);
+//
+//        imagePane.getChildren().add(imageView3);
+//
+//        imageView2.setFitHeight(60);
+//        imageView2.setFitWidth(60);
+//        ImageView imageView4 = new ImageView(image4);
+//
+//        imagePane.getChildren().add(imageView4);
 
-        pane.getChildren().add(imageView3);
+
 
         // Create a scene and place it in the stage
-        Scene scene = new Scene(pane);
+        Scene scene = new Scene(imagePane);
         primaryStage.setTitle("ShowImage"); // Set the stage title
         primaryStage.setScene(scene); // Place the scene in the stage
         primaryStage.show(); // Display the stage
     }
 }
-
-// TODO Bang head against the wall if all else fails
 
